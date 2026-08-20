@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxaqnmi4ukcd7"]
 
-[ext_resource type="Script" uid="uid://wbs0uvomiydh" path="res://back.gd" id="1_t0c5w"]
+[ext_resource type="Script" uid="uid://ba24qdo33av2k" path="res://panel.gd" id="1_t0c5w"]
+[ext_resource type="Script" uid="uid://wbs0uvomiydh" path="res://back.gd" id="2_h8mok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8mok"]
 bg_color = Color(1, 1, 1, 1)
@@ -51,6 +52,7 @@ size_flags_horizontal = 3
 [node name="Panel" type="Panel" parent="MarginContainer/AspectRatioContainer/HBoxContainer/leftpage" unique_id=121532356]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("1_t0c5w")
 
 [node name="Polygon2D" type="Polygon2D" parent="MarginContainer/AspectRatioContainer/HBoxContainer/leftpage/Panel" unique_id=353579591]
 polygon = PackedVector2Array(0, 0, 152.111, 0, 267.77472, 102.78952, 0, 102.79)
@@ -91,6 +93,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_26ynt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0j12d")
 text = "Back
 "
-script = ExtResource("1_t0c5w")
+script = ExtResource("2_h8mok")
 
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]
