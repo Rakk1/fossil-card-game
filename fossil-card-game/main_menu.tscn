@@ -1,24 +1,24 @@
 [gd_scene format=3 uid="uid://dulp46la64pc2"]
 
+[ext_resource type="Script" uid="uid://ley1gbixc5hk" path="res://v_box_container.gd" id="1_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_detail = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(5.0055983e-06, 0.6547953, 0.87072533, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngxjo"]
+
 [node name="main menu" type="Control" unique_id=792252127]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="." unique_id=1239436425]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -65.0
-offset_right = 123.0
-offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -29,3 +29,55 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1680746703]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.75
+offset_top = -61.5
+offset_right = 88.75
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1239436425]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ngxjo")
+text = "Start"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1390585045]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ngxjo")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=2077513196]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ngxjo")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer" method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer" method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer" method="_on_quit_pressed"]
