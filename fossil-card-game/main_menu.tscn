@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dulp46la64pc2"]
 
 [ext_resource type="Script" uid="uid://ley1gbixc5hk" path="res://v_box_container.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://bt7vab4vml7mx" path="res://Main menu background.png" id="1_fu7sn"]
+[ext_resource type="FontFile" uid="uid://1epjbi31o2fy" path="res://Jersey10-Regular.ttf" id="3_jix8l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2g47i"]
+texture = ExtResource("1_fu7sn")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
 bg_color = Color(1, 1, 1, 1)
@@ -29,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2g47i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1680746703]
 layout_mode = 1
@@ -77,6 +83,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ngxjo")
 text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1265013849]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.5
+offset_top = 109.0
+offset_right = 180.5
+offset_bottom = 188.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_jix8l")
+theme_override_font_sizes/normal_font_size = 60
+text = "Fossil Card Game"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer" method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer" method="_on_settings_pressed"]
