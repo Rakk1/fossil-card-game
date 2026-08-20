@@ -1,19 +1,5 @@
 [gd_scene format=3 uid="uid://dxaqnmi4ukcd7"]
 
-[ext_resource type="Script" uid="uid://wbs0uvomiydh" path="res://back.gd" id="1_t0c5w"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8mok"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_detail = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26ynt"]
-bg_color = Color(5.0055983e-06, 0.6547953, 0.87072533, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j12d"]
-
 [node name="level picker" type="Control" unique_id=79218582]
 layout_mode = 3
 anchors_preset = 15
@@ -73,24 +59,3 @@ uv = PackedVector2Array(-328.11407, -67.0461, -130.46057, -68.51019, -25.04535, 
 [node name="rightpage" type="VBoxContainer" parent="MarginContainer/AspectRatioContainer/HBoxContainer" unique_id=193538110]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Back" type="Button" parent="." unique_id=87837190]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -177.0
-offset_bottom = 35.0
-grow_horizontal = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_h8mok")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h8mok")
-theme_override_styles/hover = SubResource("StyleBoxFlat_26ynt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0j12d")
-text = "Back
-"
-script = ExtResource("1_t0c5w")
-
-[connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]
