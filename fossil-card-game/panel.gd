@@ -7,9 +7,8 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		print(event)
-		print(global_position)
-		pointWithinPolygon(event.position,poly)
+		if pointWithinPolygon(event.position,poly):
+			get_tree().change_scene_to_file("res://level.tscn")
 
 func pointWithinPolygon(point,polygon):
-	print(Geometry2D.is_point_in_polygon(point-polygon.global_position,polygon.polygon))
+	return Geometry2D.is_point_in_polygon(point-polygon.global_position,polygon.polygon)
