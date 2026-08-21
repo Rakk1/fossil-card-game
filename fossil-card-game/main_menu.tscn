@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dulp46la64pc2"]
 
-[ext_resource type="Script" uid="uid://ley1gbixc5hk" path="res://v_box_container.gd" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://bt7vab4vml7mx" path="res://Main menu background.png" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://crrohclvy558b" path="res://Comic Cover.png" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://k133p78ewrn8" path="res://start.gd" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://1epjbi31o2fy" path="res://Jersey10-Regular.ttf" id="3_jix8l"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2g47i"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8oud0"]
 texture = ExtResource("1_fu7sn")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
@@ -26,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_fu7sn")
 
 [node name="Panel" type="Panel" parent="." unique_id=971031252]
 layout_mode = 1
@@ -34,9 +35,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_2g47i")
+theme_override_styles/panel = SubResource("StyleBoxTexture_8oud0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1680746703]
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1680746703]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -49,12 +50,12 @@ offset_right = 88.75
 offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_06t4h")
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=1239436425]
+[node name="Start" type="Button" parent="Buttons" unique_id=1239436425]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_jix8l")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
@@ -62,10 +63,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ngxjo")
 text = "Start"
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1390585045]
+[node name="Settings" type="Button" parent="Buttons" unique_id=1390585045]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_jix8l")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
@@ -73,10 +75,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ngxjo")
 text = "Settings"
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=2077513196]
+[node name="Quit" type="Button" parent="Buttons" unique_id=2077513196]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_jix8l")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
@@ -98,6 +101,51 @@ theme_override_fonts/normal_font = ExtResource("3_jix8l")
 theme_override_font_sizes/normal_font_size = 60
 text = "Fossil Card Game"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer" method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer" method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer" method="_on_quit_pressed"]
+[node name="Settings" type="Panel" parent="." unique_id=934802741]
+layout_mode = 0
+offset_left = 398.00006
+offset_top = 210.0
+offset_right = 438.00006
+offset_bottom = 250.0
+scale = Vector2(9.058336, 5.610931)
+
+[node name="Back" type="Button" parent="Settings" unique_id=2041417479]
+layout_mode = 0
+offset_left = 33.11866
+offset_top = 1.7822354
+offset_right = 92.11867
+offset_bottom = 36.782234
+scale = Vector2(0.09079433, 0.1151958)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ngxjo")
+text = "Back"
+
+[node name="Label" type="Label" parent="Settings" unique_id=1708543825]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.9797716
+offset_top = -17.504871
+offset_right = 124.02023
+offset_bottom = 85.49513
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 45
+text = "Settings
+"
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
