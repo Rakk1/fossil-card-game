@@ -15,6 +15,10 @@ run/main_scene="uid://dulp46la64pc2"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Saveload="*uid://bgtyerlufk337"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
