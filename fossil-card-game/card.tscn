@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c1urqb15i55dh"]
+
+[ext_resource type="Script" uid="uid://du6n2hqnskgu1" path="res://card.gd" id="1_kikvd"]
+
+[node name="Card" type="Control" unique_id=1716690129]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kikvd")
+
+[node name="Panel" type="Panel" parent="." unique_id=1768505680]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=775667798]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="Panel" unique_id=289945279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
