@@ -6,6 +6,8 @@ const savelocation = "user://savefile.json"
 var savecontents = {
 	"version": 0,
 	"savedDinos": {},
+	"table": [],
+	"hand": [],
 	"settings": {
 		"globalvolume": 1,
 		"musicvolume": 1,

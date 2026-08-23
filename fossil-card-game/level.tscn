@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cq3f1sy3w23i7"]
 
 [ext_resource type="Script" uid="uid://bwym3xucglx83" path="res://level.gd" id="1_vonw3"]
-[ext_resource type="Script" uid="uid://d10e8b7o6vi8v" path="res://card.gd" id="2_oi3di"]
+[ext_resource type="PackedScene" uid="uid://c1urqb15i55dh" path="res://card.tscn" id="2_vonw3"]
 
 [node name="level" type="Control" unique_id=728537601]
 layout_mode = 3
@@ -46,25 +46,9 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 
-[node name="card" type="Panel" parent="MarginContainer/ScrollContainer/HBoxContainer" unique_id=899885799]
-custom_minimum_size = Vector2(120, 200)
-custom_maximum_size = Vector2(-1, 200)
+[node name="Card" parent="MarginContainer/ScrollContainer/HBoxContainer" unique_id=1716690129 instance=ExtResource("2_vonw3")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 10
-size_flags_stretch_ratio = 0.37
-script = ExtResource("2_oi3di")
-
-[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/card" unique_id=1211537475]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+size_flags_vertical = 8
 
 [connection signal="child_entered_tree" from="VBoxContainer/Panel2" to="." method="_on_panel_2_child_entered_tree"]
 [connection signal="child_exiting_tree" from="VBoxContainer/Panel2" to="." method="_on_panel_2_child_exiting_tree"]
-[connection signal="button_down" from="MarginContainer/ScrollContainer/HBoxContainer/card/Button" to="." method="_on_button_button_down" flags=18]
-[connection signal="button_up" from="MarginContainer/ScrollContainer/HBoxContainer/card/Button" to="." method="_on_button_button_up"]
-[connection signal="pressed" from="MarginContainer/ScrollContainer/HBoxContainer/card/Button" to="MarginContainer/ScrollContainer/HBoxContainer/card" method="_on_button_pressed"]
